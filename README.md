@@ -26,3 +26,5 @@ Commands:
 /jankenpon -> rock-paper-scissors mini-game with the bot or other members of the server
 
 /amongus -> Among Us simulator
+
+API Integration
