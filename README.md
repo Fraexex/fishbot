@@ -12,4 +12,5 @@ The bot is being hosted by shuttle, which essentially has a copy of this compile
 Shuttle has very good documentation and fast deployment speeds, which is why I've been enjoying it. I'll put the links to their .docs to read at your leisure.
 
 Poise: https://docs.rs/poise/latest/poise/
+
 Shuttle: https://docs.shuttle.rs/introduction/welcome
