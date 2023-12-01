@@ -2,31 +2,12 @@ use anyhow::Context as _;
 use poise::serenity_prelude as serenity;
 use shuttle_secrets::SecretStore;
 use shuttle_poise::ShuttlePoise;
+use serenity::utils::Colour;
+use poise::serenity_prelude::ButtonStyle;
 
 struct Data {} // User data, which is stored and accessible in all command invocations
 type Error = Box<dyn std::error::Error + Send + Sync>;
 type Context<'a> = poise::Context<'a, Data, Error>;
-
-const HELP_MESSAGE: &str = "
-Hello! Welcome to Nova CS club! Let's get you started:
-
-❓ Rules?
--> See <#CHANNEL_ID> for information as well as Discord TOS. If you have any
-issues with any of the rules, bring it up with @ibaad_18
-
-❓ Need help?
--> Post in the <#CHANNEL_ID> channel to get assistance from other members.
-
-❓ Suggestions for future projects?
--> Post in the <#CHANNEL_ID> channel to post your suggestions.
-";
-
-/// Responds with "world!"
-#[poise::command(slash_command)]
-async fn hello(ctx: Context<'_>) -> Result<(), Error> {
-    ctx.say("world!").await?;
-    Ok(())
-}
 
 /// Display user account creation date
 #[poise::command(slash_command, prefix_command)]
@@ -40,10 +21,36 @@ async fn age(
     Ok(())
 }
 
-/// Responds with helpful information
+/// Respond with helpful information
 #[poise::command(slash_command)]
 async fn help(ctx: Context<'_>) -> Result<(), Error> {
-    ctx.say(HELP_MESSAGE).await?;
+    ctx.send(|b| {
+        b.embed(|b| b.description(
+            "Fishbot is designed to support all your fishy needs! Here are the supported commands:\n\n
+            /help - Receive a copy of this message.\n\n
+            /fish - Get a random fish image!\n\n
+            /anifish - Get a random anime-style fish image!\n\n
+            /jankenpon - Play rock-paper-scissors FISH!\n\n
+            /gofish - The popular match-two card game...\n\n
+            
+            ❓ Need help?\n
+            -> Post in <#CHANNEL_ID> to get assistance from other members.\n\n
+            
+            ❓ Suggestions?\n
+            -> Post in <#CHANNEL_ID> to post your suggestions."
+        ).title("Help").colour(Colour::BLITZ_BLUE))
+        .ephemeral(true)
+        .components(|b| {
+            b.create_action_row(|b| {
+                b.create_button(|b| {
+                    b.label("Support information")
+                        .url("https://discord.gg/bRnvhSBV5c")
+                        .style(ButtonStyle::Link)
+                })
+            })
+        })
+    })
+    .await?;
     Ok(())
 }
 
@@ -60,7 +67,7 @@ async fn poise(#[shuttle_secrets::Secrets] secret_store: SecretStore) -> Shuttle
                 // Add commands here
                 hello(),
                 age(),
-                help()
+                help(),
             ],
             ..Default::default()
         })
