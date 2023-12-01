@@ -27,4 +27,4 @@ Commands:
 
 /gofish -> classic match-two card game
 
-API Integration
+API Integration for Safebooru
