@@ -1,8 +1,6 @@
 # README
 Planning to add a lot more commands to this bot, but for now, it only has 3:
 
--> /hello
-
 -> /help
 
 -> /age
@@ -23,8 +21,10 @@ Commands:
 
 /fish -> random image of a fish
 
+/anifish -> random image of an anime-style fish
+
 /jankenpon -> rock-paper-scissors mini-game with the bot or other members of the server
 
-/amongus -> Among Us simulator
+/gofish -> classic match-two card game
 
 API Integration
