@@ -16,3 +16,13 @@ Poise: https://docs.rs/poise/latest/poise/
 Shuttle: https://docs.shuttle.rs/introduction/welcome
 
 Note: If you decide to copy this, don't forget to create a Secrets.toml file to add your discord bot token!
+
+TODO:
+
+Commands:
+
+/fish -> random image of a fish
+
+/jankenpon -> rock-paper-scissors mini-game with the bot or other members of the server
+
+/amongus -> Among Us simulator
