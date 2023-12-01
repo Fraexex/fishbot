@@ -1,7 +1,10 @@
 # README
 Planning to add a lot more commands to this bot, but for now, it only has 3:
+
 -> /hello
+
 -> /help
+
 -> /age
 
 For the past day and up to now, I've been experimenting with different cargo crates and Poise seems to be a promising one, due to its compatibility with slash commands.
