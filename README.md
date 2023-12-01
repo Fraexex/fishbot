@@ -14,3 +14,5 @@ Shuttle has very good documentation and fast deployment speeds, which is why I'v
 Poise: https://docs.rs/poise/latest/poise/
 
 Shuttle: https://docs.shuttle.rs/introduction/welcome
+
+Note: If you decide to copy this, don't forget to create a Secrets.toml file to add your discord bot token!
